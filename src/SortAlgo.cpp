@@ -663,16 +663,19 @@ void QuickSortDualPivot(class SortArray& a)
 
 void BubbleSort(SortArray& A)
 {
-    for (size_t i = 0; i < A.size()-1; ++i)
+    do
     {
+        bool changed = false;
         for (size_t j = 0; j < A.size()-1 - i; ++j)
         {
             if (A[j] > A[j + 1])
             {
                 A.swap(j, j+1);
+                changed = true;
             }
         }
     }
+    while(changed);
 }
 
 // ****************************************************************************
